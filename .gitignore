@@ -2,6 +2,7 @@
 desert-road.css
 desert-road.css.map^
 
+.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
