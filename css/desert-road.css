@@ -21,6 +21,7 @@ body {
   -webkit-transition: background-color 3s;
   transition: background-color 3s;
   position: relative;
+  overflow: hidden;
 }
 
 .main-container .sky:hover {
@@ -138,17 +139,21 @@ body {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   overflow: hidden;
+  z-index: -1;
 }
 
 .main-container .road {
-  width: 10%;
-  height: 110%;
+  position: absolute;
+  width: 5%;
+  height: 150%;
+  left: 45%;
+  bottom: 0;
   background: #000;
-  -webkit-transform: perspective(190px) rotateX(50deg);
-          transform: perspective(190px) rotateX(50deg);
-  position: relative;
+  -webkit-transform: perspective(190px) rotateX(70deg);
+          transform: perspective(190px) rotateX(70deg);
   overflow: hidden;
   top: -30%;
+  z-index: -1;
 }
 
 .main-container .road .line {
@@ -156,36 +161,36 @@ body {
   background: #fff;
   left: 45%;
   top: 10%;
-  height: 10%;
+  height: 5%;
   width: 10%;
 }
 
 .main-container .road .line:nth-child(1) {
-  -webkit-animation: MoveLine1 0.8s linear infinite;
-          animation: MoveLine1 0.8s linear infinite;
+  -webkit-animation: MoveLine1 1s linear infinite;
+          animation: MoveLine1 1s linear infinite;
 }
 
 @-webkit-keyframes MoveLine1 {
   0% {
-    top: -20%;
+    top: -10%;
   }
   100% {
-    top: 20%;
+    top: 10%;
   }
 }
 
 @keyframes MoveLine1 {
   0% {
-    top: -20%;
+    top: -10%;
   }
   100% {
-    top: 20%;
+    top: 10%;
   }
 }
 
 .main-container .road .line:nth-child(2) {
-  -webkit-animation: MoveLine2 0.8s linear infinite;
-          animation: MoveLine2 0.8s linear infinite;
+  -webkit-animation: MoveLine2 1s linear infinite;
+          animation: MoveLine2 1s linear infinite;
 }
 
 @-webkit-keyframes MoveLine2 {
@@ -193,7 +198,7 @@ body {
     top: 0%;
   }
   100% {
-    top: 40%;
+    top: 20%;
   }
 }
 
@@ -202,195 +207,213 @@ body {
     top: 0%;
   }
   100% {
-    top: 40%;
+    top: 20%;
   }
 }
 
 .main-container .road .line:nth-child(3) {
-  -webkit-animation: MoveLine3 0.8s linear infinite;
-          animation: MoveLine3 0.8s linear infinite;
+  -webkit-animation: MoveLine3 1s linear infinite;
+          animation: MoveLine3 1s linear infinite;
 }
 
 @-webkit-keyframes MoveLine3 {
   0% {
-    top: 20%;
+    top: 10%;
   }
   100% {
-    top: 60%;
+    top: 30%;
   }
 }
 
 @keyframes MoveLine3 {
   0% {
-    top: 20%;
+    top: 10%;
   }
   100% {
-    top: 60%;
+    top: 30%;
   }
 }
 
 .main-container .road .line:nth-child(4) {
-  -webkit-animation: MoveLine4 0.8s linear infinite;
-          animation: MoveLine4 0.8s linear infinite;
+  -webkit-animation: MoveLine4 1s linear infinite;
+          animation: MoveLine4 1s linear infinite;
 }
 
 @-webkit-keyframes MoveLine4 {
   0% {
-    top: 40%;
+    top: 20%;
   }
   100% {
-    top: 80%;
+    top: 40%;
   }
 }
 
 @keyframes MoveLine4 {
   0% {
-    top: 40%;
+    top: 20%;
   }
   100% {
-    top: 80%;
+    top: 40%;
   }
 }
 
 .main-container .road .line:nth-child(5) {
-  -webkit-animation: MoveLine5 0.8s linear infinite;
-          animation: MoveLine5 0.8s linear infinite;
+  -webkit-animation: MoveLine5 1s linear infinite;
+          animation: MoveLine5 1s linear infinite;
 }
 
 @-webkit-keyframes MoveLine5 {
   0% {
-    top: 60%;
+    top: 30%;
   }
   100% {
-    top: 100%;
+    top: 50%;
   }
 }
 
 @keyframes MoveLine5 {
   0% {
-    top: 60%;
+    top: 30%;
   }
   100% {
-    top: 100%;
+    top: 50%;
   }
 }
 
 .main-container .road .line:nth-child(6) {
-  -webkit-animation: MoveLine6 0.8s linear infinite;
-          animation: MoveLine6 0.8s linear infinite;
+  -webkit-animation: MoveLine6 1s linear infinite;
+          animation: MoveLine6 1s linear infinite;
 }
 
 @-webkit-keyframes MoveLine6 {
   0% {
-    top: 80%;
+    top: 40%;
   }
   100% {
-    top: 120%;
+    top: 60%;
   }
 }
 
 @keyframes MoveLine6 {
   0% {
-    top: 80%;
+    top: 40%;
   }
   100% {
-    top: 120%;
+    top: 60%;
   }
 }
 
 .main-container .road .line:nth-child(7) {
-  -webkit-animation: MoveLine7 0.8s linear infinite;
-          animation: MoveLine7 0.8s linear infinite;
+  -webkit-animation: MoveLine7 1s linear infinite;
+          animation: MoveLine7 1s linear infinite;
 }
 
 @-webkit-keyframes MoveLine7 {
   0% {
-    top: 100%;
+    top: 50%;
   }
   100% {
-    top: 140%;
+    top: 70%;
   }
 }
 
 @keyframes MoveLine7 {
   0% {
-    top: 100%;
+    top: 50%;
   }
   100% {
-    top: 140%;
+    top: 70%;
   }
 }
 
 .main-container .road .line:nth-child(8) {
-  -webkit-animation: MoveLine8 0.8s linear infinite;
-          animation: MoveLine8 0.8s linear infinite;
+  -webkit-animation: MoveLine8 1s linear infinite;
+          animation: MoveLine8 1s linear infinite;
 }
 
 @-webkit-keyframes MoveLine8 {
   0% {
-    top: 120%;
+    top: 60%;
   }
   100% {
-    top: 160%;
+    top: 80%;
   }
 }
 
 @keyframes MoveLine8 {
   0% {
-    top: 120%;
+    top: 60%;
   }
   100% {
-    top: 160%;
+    top: 80%;
   }
 }
 
 .main-container .road .line:nth-child(9) {
-  -webkit-animation: MoveLine9 0.8s linear infinite;
-          animation: MoveLine9 0.8s linear infinite;
+  -webkit-animation: MoveLine9 1s linear infinite;
+          animation: MoveLine9 1s linear infinite;
 }
 
 @-webkit-keyframes MoveLine9 {
   0% {
-    top: 140%;
+    top: 70%;
   }
   100% {
-    top: 180%;
+    top: 90%;
   }
 }
 
 @keyframes MoveLine9 {
   0% {
-    top: 140%;
+    top: 70%;
   }
   100% {
-    top: 180%;
+    top: 90%;
   }
 }
 
 .main-container .road .line:nth-child(10) {
-  -webkit-animation: MoveLine10 0.8s linear infinite;
-          animation: MoveLine10 0.8s linear infinite;
+  -webkit-animation: MoveLine10 1s linear infinite;
+          animation: MoveLine10 1s linear infinite;
 }
 
 @-webkit-keyframes MoveLine10 {
   0% {
-    top: 160%;
+    top: 80%;
   }
   100% {
-    top: 200%;
+    top: 100%;
   }
 }
 
 @keyframes MoveLine10 {
   0% {
-    top: 160%;
+    top: 80%;
   }
   100% {
-    top: 200%;
+    top: 100%;
   }
 }
 
-.main-container .stars {
+@media (max-width: 1023px) {
+  .main-container .sky {
+    height: 50%;
+  }
+  .main-container .sky .stars-container {
+    -webkit-transform-origin: 75% 50%;
+            transform-origin: 75% 50%;
+  }
+  .main-container .desert {
+    height: 50%;
+  }
+  .main-container .road {
+    height: 170%;
+    -webkit-transform: perspective(200px) rotateX(70deg);
+            transform: perspective(200px) rotateX(70deg);
+  }
+}
+
+.stars {
   width: 2px;
   height: 2px;
   background: transparent;
@@ -403,7 +426,7 @@ body {
   opacity: 0;
 }
 
-.main-container .stars:after {
+.stars:after {
   content: " ";
   position: absolute;
   top: 0;
