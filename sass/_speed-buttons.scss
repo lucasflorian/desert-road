@@ -1,0 +1,46 @@
+.speed-buttons{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+
+    .speedup,
+    .slowdown{
+        position: relative;
+        height: 50px;
+        width: 50px;
+        background-color: #f5dc2c;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        box-shadow: 0 2px 1px rgba(0,0,0,.1);
+        cursor: pointer;
+        transition: box-shadow .2s ease-in-out;
+        
+        &:hover{
+            box-shadow: none;
+        }
+
+        &::before{
+            font-size: 30px;
+            font-weight: bold;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .speedup{
+        margin-bottom: 10px;
+        
+        &::before{
+            content: "+";
+        }
+    }
+
+    .slowdown{
+
+        &::before{
+            content: "-";
+        }
+    }
+}

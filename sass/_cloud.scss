@@ -1,0 +1,79 @@
+.cloud-container{
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    animation: MoveCloud 30s linear infinite;
+
+    .cloud{
+        position:relative;
+        width :140px;
+        height :100px;
+
+        .cloud-bubble{
+            background-color: #ffffff;
+            position: absolute;
+        }
+
+        .cloud-bubble1 {
+            width: 50px;
+            height: 50px;
+            border-radius:50%;
+            z-index: 2;
+            bottom: 0;
+            left: -22px;
+        }
+
+        .cloud-bubble2 {
+            width: 48px;
+            height: 48px;
+            border-radius:50%;
+            z-index: 2;
+            bottom: 0;
+            right: -3px;
+        }
+
+        .cloud-bubble3 {
+            width: 80px;
+            height: 80px;
+            border-radius:50%;
+            z-index: 2;
+            top: 7px;
+            right: 22px;
+        }
+
+        .cloud-bubble4 {
+            width: 40px;
+            height: 40px;
+            border-radius:50%;
+            z-index: 2;
+            top: 30px;
+            left: 9px;
+        }
+
+        .cloud-bubble5 {
+            width: 120px;
+            height: 40px;
+            z-index: 2;
+            bottom: 0px;
+        }
+    }
+
+    &.little-cloud{
+        top: 16%;
+        transform: scale(.8);
+        .cloud-bubble{
+            background-color: red;
+        }
+    }
+}
+
+
+
+@keyframes MoveCloud {
+    0% { 
+        right: -140px;
+    }
+    100% { 
+        right: 100%;
+    }
+}

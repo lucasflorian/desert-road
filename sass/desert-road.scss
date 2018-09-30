@@ -1,0 +1,24 @@
+$background-sky-day : #228cdc;
+$background-sky-night : #0c3858;
+$background-desert : linear-gradient(to bottom, #f7e251 0%,#ffe424 100%);
+$mobile: "(max-width: 1023px)";
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+@import 'cactus';
+@import 'cloud';
+@import 'container';
+@import 'desert';
+@import 'mountains';
+@import 'reset';
+@import 'road';
+@import 'sky';
+@import 'speed-buttons';
+@import 'stars';

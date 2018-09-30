@@ -1,0 +1,15 @@
+.desert{
+    height: 60%;
+    width: 100%;
+    background: $background-desert;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: space-around;
+    overflow: hidden;
+    z-index: -1;
+
+    @media #{$mobile} {
+        height: 50%;
+    }
+}

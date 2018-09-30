@@ -12,11 +12,19 @@ $(function() {
 });
 
 function changeSpeed(speedup){
-    let $roadLineSelector = $('.road .line');
-    let animDuration = Number($roadLineSelector.css('animation-duration').replace("s",""));
-    animDuration = speedup ? animDuration - 0.2 : animDuration + 0.2;
-    if(animDuration <= 0){
-        animDuration = 0.2;
+    let $line = $('.road .line');
+    let lineDuration = Number($line.css('animation-duration').replace("s",""));
+    lineDuration = speedup ? lineDuration - 0.2 : lineDuration + 0.2;
+    if(lineDuration <= 0){
+        lineDuration = 0.2;
     }
-    $roadLineSelector.css('animation-duration', animDuration + "s");
+    $line.css('animation-duration', lineDuration + "s");
+
+    let $cactus = $('.cactus');
+    let cactusDuration = Number($cactus.css('animation-duration').replace("s",""));
+    cactusDuration = speedup ? cactusDuration - 1 : cactusDuration + 1;
+    if(cactusDuration <= 0){
+        cactusDuration = 1;
+    }
+    $cactus.css('animation-duration', cactusDuration + "s");
 }
