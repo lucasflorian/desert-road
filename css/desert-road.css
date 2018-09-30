@@ -11,6 +11,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  position: relative;
   overflow: hidden;
 }
 
@@ -155,6 +156,48 @@ body {
       justify-content: space-around;
   overflow: hidden;
   z-index: -1;
+}
+
+.main-container .cactus {
+  height: 10px;
+  width: 10px;
+  background-image: url(../img/cactus.svg);
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 20%;
+  -webkit-animation: MoveCactus 3s infinite;
+          animation: MoveCactus 3s infinite;
+  overflow: hidden;
+}
+
+@-webkit-keyframes MoveCactus {
+  0% {
+    top: calc(50% - 10px);
+    height: 10px;
+    width: 10px;
+    left: 30%;
+  }
+  100% {
+    top: calc(110%);
+    height: 100px;
+    width: 100px;
+    left: 5%;
+  }
+}
+
+@keyframes MoveCactus {
+  0% {
+    top: calc(50% - 10px);
+    height: 10px;
+    width: 10px;
+    left: 30%;
+  }
+  100% {
+    top: calc(110%);
+    height: 100px;
+    width: 100px;
+    left: 5%;
+  }
 }
 
 .main-container .road {
