@@ -80,6 +80,19 @@ body{
                 background-color: #a55936;
                 left: 4%;
             }
+            .mountain:nth-child(4){
+                height: 170px;
+                width: 170px;
+                bottom: -100px;
+                left: 55%;
+            }
+            .mountain:nth-child(5){
+                height: 160px;
+                width: 160px;
+                bottom: -100px;
+                background-color: #a55936;
+                left: 50%;
+            }
         }
 
         .stars-container{
@@ -166,6 +179,52 @@ body{
         }
     }
 
+    .speed-buttons{
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+
+        .speedup,
+        .slowdown{
+            position: relative;
+            height: 50px;
+            width: 50px;
+            background-color: lightgrey;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            box-shadow: 0 1px 1px rgba(0,0,0,.1);
+            cursor: pointer;
+            
+            &:hover{
+                box-shadow: none;
+            }
+
+            &::before{
+                font-size: 30px;
+                font-weight: bold;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .speedup{
+            margin-bottom: 10px;
+            
+            &::before{
+                content: "+";
+            }
+        }
+
+        .slowdown{
+
+            &::before{
+                content: "-";
+            }
+        }
+
+    }
 
     @media #{$mobile} {
         .sky{

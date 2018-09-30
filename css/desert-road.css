@@ -80,6 +80,21 @@ body {
   left: 4%;
 }
 
+.main-container .sky .mountains .mountain:nth-child(4) {
+  height: 170px;
+  width: 170px;
+  bottom: -100px;
+  left: 55%;
+}
+
+.main-container .sky .mountains .mountain:nth-child(5) {
+  height: 160px;
+  width: 160px;
+  bottom: -100px;
+  background-color: #a55936;
+  left: 50%;
+}
+
 .main-container .sky .stars-container {
   height: 100%;
   width: 100%;
@@ -393,6 +408,59 @@ body {
   100% {
     top: 100%;
   }
+}
+
+.main-container .speed-buttons {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+
+.main-container .speed-buttons .speedup,
+.main-container .speed-buttons .slowdown {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  background-color: lightgrey;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.main-container .speed-buttons .speedup:hover,
+.main-container .speed-buttons .slowdown:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.main-container .speed-buttons .speedup::before,
+.main-container .speed-buttons .slowdown::before {
+  font-size: 30px;
+  font-weight: bold;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-container .speed-buttons .speedup {
+  margin-bottom: 10px;
+}
+
+.main-container .speed-buttons .speedup::before {
+  content: "+";
+}
+
+.main-container .speed-buttons .slowdown::before {
+  content: "-";
 }
 
 @media (max-width: 1023px) {
