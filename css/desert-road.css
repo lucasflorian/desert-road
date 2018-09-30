@@ -123,9 +123,9 @@
   }
   50% {
     top: calc(120%);
-    height: 80px;
-    width: 80px;
-    left: 2%;
+    height: 150px;
+    width: 150px;
+    left: -30%;
   }
   100% {
     top: 200%;
@@ -141,9 +141,9 @@
   }
   50% {
     top: calc(120%);
-    height: 80px;
-    width: 80px;
-    left: 2%;
+    height: 150px;
+    width: 150px;
+    left: -30%;
   }
   100% {
     top: 200%;
@@ -166,9 +166,9 @@
   }
   100% {
     top: calc(120%);
-    height: 80px;
-    width: 80px;
-    right: 2%;
+    height: 100px;
+    width: 100px;
+    right: -30%;
   }
 }
 
@@ -188,9 +188,9 @@
   }
   100% {
     top: calc(120%);
-    height: 80px;
-    width: 80px;
-    right: 2%;
+    height: 100px;
+    width: 100px;
+    right: -30%;
   }
 }
 
@@ -381,8 +381,8 @@ body {
   left: 45%;
   bottom: 0;
   background: #000;
-  -webkit-transform: perspective(190px) rotateX(70deg);
-          transform: perspective(190px) rotateX(70deg);
+  -webkit-transform: perspective(190px) rotateX(65deg);
+          transform: perspective(190px) rotateX(65deg);
   overflow: hidden;
   top: -30%;
   z-index: -1;
@@ -391,8 +391,8 @@ body {
 @media (max-width: 1023px) {
   .road {
     height: 170%;
-    -webkit-transform: perspective(200px) rotateX(70deg);
-            transform: perspective(200px) rotateX(70deg);
+    -webkit-transform: perspective(140px) rotateX(70deg);
+            transform: perspective(140px) rotateX(70deg);
   }
 }
 
@@ -680,6 +680,13 @@ body {
   -webkit-transition: all 3s;
   transition: all 3s;
   position: relative;
+}
+
+@media (max-width: 1023px) {
+  .sky .stars-container {
+    -webkit-transform-origin: 90% 50%;
+            transform-origin: 90% 50%;
+  }
 }
 
 .sky .stars-container .sun {

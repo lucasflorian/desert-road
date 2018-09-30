@@ -5,14 +5,14 @@
     left: 45%;
     bottom: 0;
     background: #000;
-    transform: perspective(190px) rotateX(70deg);
+    transform: perspective(190px) rotateX(65deg);
     overflow: hidden;
     top: -30%;
     z-index: -1;
 
     @media #{$mobile} {
         height: 170%;
-        transform: perspective(200px) rotateX(70deg);     
+        transform: perspective(140px) rotateX(70deg);     
     }
     
     .line{

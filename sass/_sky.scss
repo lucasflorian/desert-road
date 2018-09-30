@@ -38,6 +38,10 @@
         transition: all 3s;
         position: relative;
 
+        @media #{$mobile} {
+            transform-origin: 90% 50%;
+        }
+
         .sun { 
             position: absolute;
             top:10%;

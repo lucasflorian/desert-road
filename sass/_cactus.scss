@@ -70,9 +70,9 @@
     }
     50% { 
         top: calc(120%); 
-        height: 80px; 
-        width: 80px; 
-        left: 2%;
+        height: 150px; 
+        width: 150px; 
+        left: -30%;
     }
     100% { 
         top: 200%;
@@ -95,8 +95,8 @@
     }
     100% { 
         top: calc(120%); 
-        height: 80px; 
-        width: 80px; 
-        right: 2%;
+        height: 100px; 
+        width: 100px; 
+        right: -30%;
     }
 }

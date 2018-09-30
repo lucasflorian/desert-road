@@ -1,7 +1,9 @@
 $background-sky-day : #228cdc;
 $background-sky-night : #0c3858;
 $background-desert : linear-gradient(to bottom, #f7e251 0%,#ffe424 100%);
+
 $mobile: "(max-width: 1023px)";
+$largeDesktop: "(min-width: 1920px)";
 
 .main-container {
     height: 100%;
