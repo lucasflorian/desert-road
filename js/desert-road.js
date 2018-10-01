@@ -31,6 +31,8 @@ $(function() {
         });
     }, 20);
 
+    $('.sky').css('transition','background-color 3s');
+
 });
 
 function changeSpeed(speedup){

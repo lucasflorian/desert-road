@@ -4,7 +4,7 @@
     bottom: 50px;
     left: 45%;
     animation: MoveCar .3s linear infinite;
-    //transition: all .5s ease-in-out;
+    z-index: 4;
 }
 
 .car{
