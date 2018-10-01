@@ -288,7 +288,6 @@
   }
 }
 
-/* Smoke animation */
 @-webkit-keyframes smokeL {
   0% {
     -webkit-transform: scale(0.2) translate(0, 0);
@@ -305,6 +304,7 @@
             transform: scale(1) translate(-20px, 130px);
   }
 }
+
 @keyframes smokeL {
   0% {
     -webkit-transform: scale(0.2) translate(0, 0);
@@ -955,15 +955,7 @@ body {
 .stars {
   position: absolute;
   width: 100%;
-  height: 450px;
-  /* The dark blue to slightly-less-dark blue gradient */
-  background-color: #032a54;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#011428), to(#032a54));
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#011428), to(#032a54));
-  background-image: linear-gradient(top, #011428, #032a54);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#011428', endColorstr='#032a54', GradientType=0);
-  margin-bottom: 10px;
+  height: 100%;
   opacity: 0;
   -webkit-transition: all 3s;
   transition: all 3s;
