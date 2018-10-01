@@ -4,10 +4,11 @@ $(function() {
     let cactus = $('.cactus');
     var car = $('.car-container');
     var carHelpMessage =  $('.help-1');
+    var skyHelpMessage =  $('.help-2');
 
     initSpeedButtons(roadLine,cactus);
     initCar(car,carHelpMessage);
-    initHelpButton(carHelpMessage);
+    initHelpButton(carHelpMessage, skyHelpMessage);
 
     $('.sky').css('transition','background-color 3s');
 
@@ -16,12 +17,25 @@ $(function() {
     
 });
 
-function initHelpButton(carHelpMessage){
+function initHelpButton(carHelpMessage, skyHelpMessage){
     $('.help-me').on('click',function(){
         setTimeout(function(){
             carHelpMessage.show();
         },500);
+
+        let sun = $('.sun');
+        skyHelpMessage.css({
+            'left': sun.position().left + sun.width() - 50,
+            'top' : sun.position().top + carHelpMessage.height() - 20
+        });
+        setTimeout(function(){
+            skyHelpMessage.show();
+        },1500);
     });
+
+    $('.help-bubble').on('click',function(){
+        $(this).hide();
+    })
 }
 
 function initSpeedButtons(roadLine, cactus){
@@ -53,7 +67,7 @@ function initCar(car, carHelpMessage){
             }
         });
         
-        moveHelpWithCar(car, carHelpMessage);
+       // moveHelpWithCar(car, carHelpMessage);
     }, 20);
 }
 

@@ -26,15 +26,23 @@
     position: absolute;
     display: none;
     width: 250px;
-    height: 120px;
     background-color: #d73030;
     color: white;
     border-radius: 8px;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     font-weight: 600;
 
-    &:after{
+    &::before{
+        content: 'x';
+        font-size: 18px;
+        position: absolute;
+        top: 5px;
+        right: 9px;
+        cursor: pointer;
+    }
+
+    &::after{
         content: '';
         position: absolute;
         bottom: 0;
@@ -48,10 +56,21 @@
         margin-left: -10px;
         margin-bottom: -20px;
     }
+
+    &.reversed{
+        &::after{
+            top: 0;
+            border-top: 0;
+            margin-top: -20px;
+            border-bottom: 20px solid #d73030;
+        }
+    }
 }
 
 .help-1{
     
+    height: 120px;
+
     .arrow-keys{
         width: 110px;
         height: 45px;
@@ -81,7 +100,7 @@
 }
 
 .help-2{
-
+    height: 65px;
 }
 
 @keyframes KeyPressed {

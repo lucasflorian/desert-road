@@ -561,16 +561,24 @@
   position: absolute;
   display: none;
   width: 250px;
-  height: 120px;
   background-color: #d73030;
   color: white;
   border-radius: 8px;
-  padding: 5px;
+  padding: 10px;
   text-align: center;
   font-weight: 600;
 }
 
-.help-bubble:after {
+.help-bubble::before {
+  content: 'x';
+  font-size: 18px;
+  position: absolute;
+  top: 5px;
+  right: 9px;
+  cursor: pointer;
+}
+
+.help-bubble::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -583,6 +591,17 @@
   border-left: 0;
   margin-left: -10px;
   margin-bottom: -20px;
+}
+
+.help-bubble.reversed::after {
+  top: 0;
+  border-top: 0;
+  margin-top: -20px;
+  border-bottom: 20px solid #d73030;
+}
+
+.help-1 {
+  height: 120px;
 }
 
 .help-1 .arrow-keys {
@@ -613,6 +632,10 @@
 
 .help-1 .arrow-keys .arrow-key.right {
   animation: KeyPressed 2s reverse infinite step-end;
+}
+
+.help-2 {
+  height: 65px;
 }
 
 @-webkit-keyframes KeyPressed {
