@@ -35,21 +35,3 @@
         }
     }
 }
-
-.car-container{
-    width: 12%;
-    position: absolute;
-    bottom: 50px;
-    left: 52%;
-    animation: MoveCar .3s linear infinite;
-}
-
-.car{
-    height: 100%;
-    width: 100%;    
-}
-
-@keyframes MoveCar {
-    0% { bottom: 50px; }
-    100% { bottom: 53px; }
-}

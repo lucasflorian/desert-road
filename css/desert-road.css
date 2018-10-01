@@ -529,53 +529,14 @@
 }
 
 .mountains {
-  height: 100%;
+  height: 40%;
   width: 100%;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-}
-
-.mountains .mountain {
-  height: 100px;
-  width: 100px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  background-color: #7d3a1a;
-  position: absolute;
-  bottom: -50px;
-}
-
-.mountains .mountain:nth-child(1) {
-  left: 6%;
-  background-color: #a55936;
-  bottom: -55px;
-}
-
-.mountains .mountain:nth-child(2) {
-  left: 2%;
-  height: 80px;
-}
-
-.mountains .mountain:nth-child(3) {
-  height: 50px;
-  background-color: #a55936;
-  left: 4%;
-}
-
-.mountains .mountain:nth-child(4) {
-  height: 170px;
-  width: 170px;
-  bottom: -100px;
-  left: 55%;
-}
-
-.mountains .mountain:nth-child(5) {
-  height: 160px;
-  width: 160px;
-  bottom: -100px;
-  background-color: #a55936;
-  left: 50%;
+  background-image: url("../img/moutains.png");
+  background-size: cover;
+  background-repeat-x: repeat;
 }
 
 html,
@@ -847,29 +808,6 @@ body {
   }
 }
 
-.car-container {
-  width: 12%;
-  position: absolute;
-  bottom: 50px;
-  left: 52%;
-  -webkit-animation: MoveCar .3s linear infinite;
-          animation: MoveCar .3s linear infinite;
-}
-
-.car {
-  height: 100%;
-  width: 100%;
-}
-
-@keyframes MoveCar {
-  0% {
-    bottom: 50px;
-  }
-  100% {
-    bottom: 53px;
-  }
-}
-
 .sky {
   height: 40%;
   width: 100%;
@@ -1012,5 +950,40 @@ body {
 
 .speed-buttons .slowdown::before {
   content: "-";
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 450px;
+  /* The dark blue to slightly-less-dark blue gradient */
+  background-color: #032a54;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#011428), to(#032a54));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#011428), to(#032a54));
+  background-image: linear-gradient(top, #011428, #032a54);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#011428', endColorstr='#032a54', GradientType=0);
+  margin-bottom: 10px;
+  opacity: 0;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+}
+
+.stars div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.stars .large {
+  background: url("../img/stars_large.png");
+}
+
+.stars .medium {
+  background: url("../img/stars_medium.png");
+}
+
+.stars .small {
+  background: url("../img/stars_small.png");
 }
 /*# sourceMappingURL=desert-road.css.map */
