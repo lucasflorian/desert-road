@@ -33,6 +33,17 @@ $(function() {
 
     $('.sky').css('transition','background-color 3s');
 
+    let help1 =  $('.help-1');
+    $('.help-me').on('click',function(){
+        setTimeout(function(){
+            help1.show();
+        },3000);
+    });
+
+    help1.css({
+        'left': car.position().left + car.width() - 50,
+        'top' : car.position().top - help1.height() - 40
+    });
 });
 
 function changeSpeed(speedup){

@@ -12,6 +12,7 @@ $largeDesktop: "(min-width: 1920px)";
     padding: 0;
     position: relative;
     overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 @import 'cactus';
@@ -19,6 +20,7 @@ $largeDesktop: "(min-width: 1920px)";
 @import 'cloud';
 @import 'container';
 @import 'desert';
+@import 'help';
 @import 'mountains';
 @import 'reset';
 @import 'road';

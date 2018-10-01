@@ -5,6 +5,7 @@
   padding: 0;
   position: relative;
   overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .cactus {
@@ -41,11 +42,11 @@
     width: 10px;
     left: 40%;
   }
-  35% {
+  20% {
     top: 40%;
-    height: 30px;
-    width: 30px;
-    left: 37%;
+    height: 50px;
+    width: 50px;
+    left: 35%;
   }
   50% {
     top: calc(120%);
@@ -65,11 +66,11 @@
     width: 10px;
     left: 40%;
   }
-  35% {
+  20% {
     top: 40%;
-    height: 30px;
-    width: 30px;
-    left: 37%;
+    height: 50px;
+    width: 50px;
+    left: 35%;
   }
   50% {
     top: calc(120%);
@@ -96,11 +97,11 @@
     right: 40%;
     display: block;
   }
-  85% {
+  70% {
     top: 40%;
-    height: 30px;
-    width: 30px;
-    right: 37%;
+    height: 50px;
+    width: 50px;
+    right: 35%;
   }
   100% {
     top: calc(120%);
@@ -124,11 +125,11 @@
     right: 40%;
     display: block;
   }
-  85% {
+  70% {
     top: 40%;
-    height: 30px;
-    width: 30px;
-    right: 37%;
+    height: 50px;
+    width: 50px;
+    right: 35%;
   }
   100% {
     top: calc(120%);
@@ -528,6 +529,134 @@
   }
 }
 
+.help-me {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  background-color: #ffee75;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  -webkit-transition: -webkit-box-shadow .2s ease-in-out;
+  transition: -webkit-box-shadow .2s ease-in-out;
+  transition: box-shadow .2s ease-in-out;
+  transition: box-shadow .2s ease-in-out, -webkit-box-shadow .2s ease-in-out;
+  text-align: center;
+  line-height: 60px;
+  vertical-align: middle;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.help-me:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.help-bubble {
+  position: absolute;
+  display: none;
+  width: 250px;
+  height: 120px;
+  background-color: #d73030;
+  color: white;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.help-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #d73030;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+
+.help-1 .arrow-keys {
+  width: 110px;
+  height: 45px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.help-1 .arrow-keys .arrow-key {
+  width: 50px;
+  height: 35px;
+  background-color: #333;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0.2em 0 0.05em #222;
+          box-shadow: 0 0.2em 0 0.05em #222;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 35px;
+  color: white;
+  font-size: 10px;
+  display: inline-block;
+  -webkit-animation: KeyPressed 2s infinite step-end;
+          animation: KeyPressed 2s infinite step-end;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.help-1 .arrow-keys .arrow-key.right {
+  animation: KeyPressed 2s reverse infinite step-end;
+}
+
+@-webkit-keyframes KeyPressed {
+  0% {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background: #2a2a2a;
+    color: lightgray;
+    margin-top: 3px;
+  }
+  50% {
+    -webkit-box-shadow: 0 0.2em 0 0.05em #222;
+            box-shadow: 0 0.2em 0 0.05em #222;
+    margin-top: 0px;
+  }
+  100% {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background: #2a2a2a;
+    color: lightgray;
+  }
+}
+
+@keyframes KeyPressed {
+  0% {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background: #2a2a2a;
+    color: lightgray;
+    margin-top: 3px;
+  }
+  50% {
+    -webkit-box-shadow: 0 0.2em 0 0.05em #222;
+            box-shadow: 0 0.2em 0 0.05em #222;
+    margin-top: 0px;
+  }
+  100% {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background: #2a2a2a;
+    color: lightgray;
+  }
+}
+
 .mountains {
   height: 40%;
   width: 100%;
@@ -574,8 +703,8 @@ body {
   background: #fff;
   left: 45%;
   top: 10%;
-  height: 5%;
-  width: 10%;
+  height: 4%;
+  width: 5%;
 }
 
 .road .line:nth-child(1) {
@@ -906,7 +1035,7 @@ body {
   position: relative;
   height: 50px;
   width: 50px;
-  background-color: #f5dc2c;
+  background-color: #ffee75;
   border-radius: 50%;
   border: 1px solid transparent;
   -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
