@@ -1,65 +1,74 @@
 $(function() {
 
-    $(".speedup").on('click',function(){
-        changeSpeed(true);
-    });
+    let roadLine = $('.road .line');
+    let cactus = $('.cactus');
+    var car = $('.car-container');
+    var carHelpMessage =  $('.help-1');
 
-    $(".slowdown").on('click',function(){
-        changeSpeed(false);
-    });
-
-    let car = $('.car-container');
-    let maxValue = $(window).width() - car.width() ;
-    let keysPressed = {};
-    let distancePerIteration = 10;
-
-    function calculateNewValue(oldValue, keyCode1, keyCode2) {
-        var newValue = parseInt(oldValue, 10)
-                    - (keysPressed[keyCode1] ? distancePerIteration : 0)
-                    + (keysPressed[keyCode2] ? distancePerIteration : 0);
-        return newValue < 0 ? 0 : newValue > maxValue ? maxValue : newValue;
-    }
-
-    $(window).keydown(function(event) { keysPressed[event.which] = true; });
-    $(window).keyup(function(event) { keysPressed[event.which] = false; });
-
-    setInterval(function() {
-        car.css({
-            left: function(index ,oldValue) {
-                return calculateNewValue(oldValue, 37, 39);
-            }
-        });
-    }, 20);
+    initSpeedButtons(roadLine,cactus);
+    initCar(car,carHelpMessage);
+    initHelpButton(carHelpMessage);
 
     $('.sky').css('transition','background-color 3s');
 
-    let help1 =  $('.help-1');
-    $('.help-me').on('click',function(){
-        setTimeout(function(){
-            help1.show();
-        },3000);
-    });
-
-    help1.css({
-        'left': car.position().left + car.width() - 50,
-        'top' : car.position().top - help1.height() - 40
-    });
+   
+    moveHelpWithCar(car, carHelpMessage);
+    
 });
 
-function changeSpeed(speedup){
-    let $line = $('.road .line');
-    let lineDuration = Number($line.css('animation-duration').replace("s",""));
-    lineDuration = speedup ? lineDuration - 0.2 : lineDuration + 0.2;
-    if(lineDuration <= 0){
-        lineDuration = 0.2;
-    }
-    $line.css('animation-duration', lineDuration + "s");
+function initHelpButton(carHelpMessage){
+    $('.help-me').on('click',function(){
+        setTimeout(function(){
+            carHelpMessage.show();
+        },500);
+    });
+}
 
-    let $cactus = $('.cactus');
-    let cactusDuration = Number($cactus.css('animation-duration').replace("s",""));
-    cactusDuration = speedup ? cactusDuration - 1 : cactusDuration + 1;
-    if(cactusDuration <= 0){
-        cactusDuration = 1;
+function initSpeedButtons(roadLine, cactus){
+    $(".speedup").on('click',function(){ 
+        changeSpeed(roadLine, true, 0.2);
+        changeSpeed(cactus, true, 1);
+    });
+
+    $(".slowdown").on('click',function(){
+        changeSpeed(roadLine, false, 0.2);
+        changeSpeed(cactus, false, 1);
+    });
+}
+
+function initCar(car, carHelpMessage){
+    let keysPressed = {};
+    let distancePerIteration = 10;
+    let maxValue = $(window).width() - car.width() ;
+
+    $(window).on('keydown',function(event) { keysPressed[event.which] = true; });
+    $(window).on('keyup', function(event) { keysPressed[event.which] = false; });
+    setInterval(function() {
+        car.css({
+            left: function(index ,oldValue) {
+                var newValue = parseInt(oldValue, 10)
+                - (keysPressed[37] ? distancePerIteration : 0)
+                + (keysPressed[39] ? distancePerIteration : 0);
+                return newValue < 0 ? 0 : newValue > maxValue ? maxValue : newValue;
+            }
+        });
+        
+        moveHelpWithCar(car, carHelpMessage);
+    }, 20);
+}
+
+function moveHelpWithCar(car, carHelpMessage){
+    carHelpMessage.css({
+        'left': car.position().left + car.width() - 50,
+        'top' : car.position().top - carHelpMessage.height() - 40
+    });
+}
+
+function changeSpeed(element, speedup, stepSize){
+    let duration = Number(element.css('animation-duration').replace("s",""));
+    duration = speedup ? duration - stepSize : duration + stepSize;
+    if(duration <= 0){
+        duration = stepSize;
     }
-    $cactus.css('animation-duration', cactusDuration + "s");
+    element.css('animation-duration', duration + "s");
 }
