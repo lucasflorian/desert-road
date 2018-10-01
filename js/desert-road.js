@@ -8,6 +8,21 @@ $(function() {
         changeSpeed(false);
     });
 
+    $(document).keydown(function(event) {
+        let leftPercentage = $('.car-container').position().left / $('.car-container').parent().width() * 100;
+        switch(event.keyCode){
+            case 37:
+                leftPercentage = leftPercentage - 5;
+                $('.car-container').css('left',leftPercentage + '%');
+                break;
+            case 39:
+                leftPercentage = leftPercentage + 5;
+                $('.car-container').css('left',leftPercentage + '%');
+                break;
+            default:
+                break;
+        }
+    });
 
 });
 
