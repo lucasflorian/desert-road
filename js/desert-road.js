@@ -8,21 +8,28 @@ $(function() {
         changeSpeed(false);
     });
 
-    $(document).keydown(function(event) {
-        let leftPercentage = $('.car-container').position().left / $('.car-container').parent().width() * 100;
-        switch(event.keyCode){
-            case 37:
-                leftPercentage = leftPercentage - 5;
-                $('.car-container').css('left',leftPercentage + '%');
-                break;
-            case 39:
-                leftPercentage = leftPercentage + 5;
-                $('.car-container').css('left',leftPercentage + '%');
-                break;
-            default:
-                break;
-        }
-    });
+    let car = $('.car-container');
+    let maxValue = $(window).width() - car.width() ;
+    let keysPressed = {};
+    let distancePerIteration = 10;
+
+    function calculateNewValue(oldValue, keyCode1, keyCode2) {
+        var newValue = parseInt(oldValue, 10)
+                    - (keysPressed[keyCode1] ? distancePerIteration : 0)
+                    + (keysPressed[keyCode2] ? distancePerIteration : 0);
+        return newValue < 0 ? 0 : newValue > maxValue ? maxValue : newValue;
+    }
+
+    $(window).keydown(function(event) { keysPressed[event.which] = true; });
+    $(window).keyup(function(event) { keysPressed[event.which] = false; });
+
+    setInterval(function() {
+        car.css({
+            left: function(index ,oldValue) {
+                return calculateNewValue(oldValue, 37, 39);
+            }
+        });
+    }, 20);
 
 });
 
