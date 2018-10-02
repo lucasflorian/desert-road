@@ -5,16 +5,6 @@ $background-desert : linear-gradient(to bottom, #f7e251 0%,#ffe424 100%);
 $mobile: "(max-width: 1023px)";
 $largeDesktop: "(min-width: 1920px)";
 
-.main-container {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-    font-family: 'Courier New', Courier, monospace;
-}
-
 @import 'cactus';
 @import 'car';
 @import 'cloud';
