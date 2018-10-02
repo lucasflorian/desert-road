@@ -1,28 +1,37 @@
+var carPositionInterval;
+
 $(function() {
 
     let roadLine = $('.road .line');
     let cactus = $('.cactus');
     var car = $('.car-container');
-    var carHelpMessage =  $('.help-1');
-    var skyHelpMessage =  $('.help-2');
+    var carHelpMessage =  $('.help-car');
+    var skyHelpMessage =  $('.help-sky');
 
     initSpeedButtons(roadLine,cactus);
     initCar(car,carHelpMessage);
     initHelpButton(carHelpMessage, skyHelpMessage);
 
+    //avoid road appearing over sky on load
     $('.sky').css('transition','background-color 3s');
 
-   
-    moveHelpWithCar(car, carHelpMessage);
-    
+    //reinit car position when resizing window
+    $(window).on('resize',function(){
+        clearInterval(carPositionInterval);
+        initCar(car,carHelpMessage);
+    });
 });
+
 
 function initHelpButton(carHelpMessage, skyHelpMessage){
     $('.help-me').on('click',function(){
+
+        //show car help message
         setTimeout(function(){
             carHelpMessage.show();
         },500);
 
+        //show sky help message
         let sun = $('.sun');
         skyHelpMessage.css({
             'left': sun.position().left + sun.width() - 50,
@@ -31,6 +40,8 @@ function initHelpButton(carHelpMessage, skyHelpMessage){
         setTimeout(function(){
             skyHelpMessage.show();
         },1500);
+
+        //show speed buttons help message
     });
 
     $('.help-bubble').on('click',function(){
@@ -51,31 +62,33 @@ function initSpeedButtons(roadLine, cactus){
 }
 
 function initCar(car, carHelpMessage){
-    let keysPressed = {};
+    let keysPressed = [];
     let distancePerIteration = 10;
-    let maxValue = $(window).width() - car.width() ;
+    let carHalfWidth = car.width() / 2;
+    let minValue = $(window).width() * 0.4 - carHalfWidth ;
+    let maxValue = $(window).width() * 0.55 - carHalfWidth;
+    //init left position to keep car in the center of the road when resizing window
+    car.css('left','45%');
 
     $(window).on('keydown',function(event) { keysPressed[event.which] = true; });
     $(window).on('keyup', function(event) { keysPressed[event.which] = false; });
-    setInterval(function() {
-        car.css({
-            left: function(index ,oldValue) {
-                var newValue = parseInt(oldValue, 10)
-                - (keysPressed[37] ? distancePerIteration : 0)
-                + (keysPressed[39] ? distancePerIteration : 0);
-                return newValue < 0 ? 0 : newValue > maxValue ? maxValue : newValue;
-            }
-        });
+    carPositionInterval = setInterval(function() {
+        if(isCarMoving(keysPressed)){
+            car.css({
+                left: function(index ,oldValue) {
+                    var newValue = parseInt(oldValue, 10)
+                    - (keysPressed[37] ? distancePerIteration : 0)
+                    + (keysPressed[39] ? distancePerIteration : 0);
+                    return newValue < minValue ? minValue : newValue > maxValue ? maxValue : newValue;
+                }
+            });
         
-       // moveHelpWithCar(car, carHelpMessage);
+        }
     }, 20);
 }
 
-function moveHelpWithCar(car, carHelpMessage){
-    carHelpMessage.css({
-        'left': car.position().left + car.width() - 50,
-        'top' : car.position().top - carHelpMessage.height() - 40
-    });
+function isCarMoving(keysPressed){
+    return keysPressed[37] || keysPressed[39];
 }
 
 function changeSpeed(element, speedup, stepSize){

@@ -34,8 +34,8 @@
     font-weight: 600;
 
     &::before{
-        content: 'x';
-        font-size: 18px;
+        content: '✖';
+        font-size: 14px;
         position: absolute;
         top: 5px;
         right: 9px;
@@ -65,11 +65,16 @@
             border-bottom: 20px solid #d73030;
         }
     }
+
+    p{
+        margin: 6px 0;
+    }
 }
 
-.help-1{
-    
-    height: 120px;
+.help-car{
+    position: absolute;
+    top: -130px;
+    right: -240px;
 
     .arrow-keys{
         width: 110px;
@@ -99,8 +104,19 @@
     }
 }
 
-.help-2{
-    height: 65px;
+.help-sky{
+    padding-top: 65px;
+    .cursor-hand{
+        width: 47px;
+        height: 60px;
+        background-image: url(../img/cursor-hand.png);
+        background-size: cover;
+        margin: 0 auto;
+        top: 10px;
+        left: calc(50% - 23px);
+        position: absolute;
+        animation: MoveCursor 1s ease-in-out infinite;
+    }
 }
 
 @keyframes KeyPressed {
@@ -118,5 +134,32 @@
         box-shadow: none;
         background: #2a2a2a;
         color:lightgray;
+    }
+}
+
+@keyframes MoveCursor {
+    0% {
+        top: 3px;
+        left: calc(50% - 25px);
+    }
+    20% {
+        top: 5px;
+        left: calc(50% - 25px);
+    }
+    40% {
+        top: 3px;
+        left: calc(50% - 21px);
+    }
+    60% {
+        top: 5px;
+        left: calc(50% - 21px);
+    }
+    80% {
+        top: 4px;
+        left: calc(50% - 23px);
+    }
+    100% {
+        top: 3px;
+        left: calc(50% - 25px);
     }
 }
