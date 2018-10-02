@@ -1095,6 +1095,8 @@ body {
   opacity: 1;
   -webkit-transition: opacity 3s;
   transition: opacity 3s;
+  -webkit-animation: SunGlow .5s ease-in-out infinite;
+          animation: SunGlow .5s ease-in-out infinite;
 }
 
 .sky .stars-container .moon {
@@ -1113,6 +1115,36 @@ body {
   opacity: 0;
   -webkit-transition: opacity 3s;
   transition: opacity 3s;
+}
+
+@-webkit-keyframes SunGlow {
+  0% {
+    -webkit-box-shadow: 0px 0px 40px 14px white;
+            box-shadow: 0px 0px 40px 14px white;
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 40px 15px white;
+            box-shadow: 0px 0px 40px 15px white;
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 40px 14px white;
+            box-shadow: 0px 0px 40px 14px white;
+  }
+}
+
+@keyframes SunGlow {
+  0% {
+    -webkit-box-shadow: 0px 0px 40px 14px white;
+            box-shadow: 0px 0px 40px 14px white;
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 40px 15px white;
+            box-shadow: 0px 0px 40px 15px white;
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 40px 14px white;
+            box-shadow: 0px 0px 40px 14px white;
+  }
 }
 
 .speed-buttons {
